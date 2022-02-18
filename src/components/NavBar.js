@@ -1,9 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 
-import About from "./About";
-
-
 // The NavBar component,
 
 const Navbar = () => {
@@ -62,7 +59,7 @@ const Navbar = () => {
 
     )
 
-    // Logo for the NavBar       https://www.youtube.com/watch?v=Y891NBAdtgI&list=PL1wzr--U1bxPrW6TRxILFqlsNkcm_OVma
+    // Logo for the NavBar
 
     function Logo() {
         return <svg xmlns="http://www.w3.org/2000/svg" className="h-10" fill="pink" viewBox="0 0 24 24"
