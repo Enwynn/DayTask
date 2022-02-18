@@ -7,13 +7,13 @@ const Navbar = () => {
 
     return (
 
-        <nav className="bg-gray-700 h-24">
+        <nav className="bg-gray-700 h-24 ">
 
-            <div className="flex items-center justify-between ">
+            <div className="flex items-center justify-between pr-20">
 
                 {/*!-- Logo and the website name --!*/}
 
-                <div className="flex pr-5 items-center m-5">
+                <div className="flex pr-5  m-5">
                     <div className="pl-5">
                         {Logo()}
                     </div>
