@@ -1,24 +1,23 @@
 import {useState} from "react";
-import UseState_Hook from "../../practiseHooks/UseState_Hook";
-import UseState1_Hook from "../../practiseHooks/UseState1_Hook";
-import UseReducer_Hook from "../../practiseHooks/UseReducer_Hook";
-import UseEffect from "../../practiseHooks/UseEffect";
-import UseRef_Hook from "../../practiseHooks/UseRef_Hook";
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import tasks from "../Tasks";
 import DropDown from "./DropDown";
+import tasks from "../Tasks";
 
 
 const Home = () => {
 
+    // Maybe change state by using the reducer hook.
+    const [task, setTask] = useState("All");
+    const [category, setCategory] = useState();
+    const [description, setDescription] = useState("null");
 
     return (
-        <div>
+        <div className="">
+
+            <div className="-space-y-64">
 
             {/*Add Task*/}
 
-            <div className=" min-h-screen flex items-center justify-center bg-gray-500">
+            <div className=" pb-60 min-h-screen flex items-center justify-center bg-gray-500">
 
                 <div className="bg-white p-8 rounded shadow-2xl w-1/2">
 
@@ -27,38 +26,40 @@ const Home = () => {
 
                         <div>
                             <label className="mb-2 block">Category</label>
-                            <DropDown/>
+                            <DropDown setCategory={setCategory}/>
 
                         </div>
 
                         <div>
                             <label className="mb-2 block">Description</label>
-                            <input className="border border-gray-400 p-5" type="text"/>
+                            <input onChange={(e) => setDescription(e.target.value)} className="border border-gray-400 p-5" type="text"/>
+                                    </div>
 
 
-                        </div>
+                        <button  onClick={() => setTask(task[3])} type="button" className=" bg-red-400 px-4 py-2 rounded" >Add Task</button>
 
-                        <button>Add Task</button>
                     </form>
 
                 </div>
             </div>
 
             {/*Display Tasks*/}
+            <div className=" pb-28 flex items-center justify-center bg-gray-500">
+                <div className="bg-white p-8 rounded shadow-2xl w-1/2">
 
-            <div>
+                    <h1> {task[2]}   </h1>
+
+                </div>
 
             </div>
+            </div>
+
 
         </div>
 
-    )
 
-    function getTasks() {
-        let tasker;
-        tasker = tasks({description: "Hello my dear friend", category: "Task"});
-        console.log(tasker);
-    }
+
+    )
 
 }
 
