@@ -8,7 +8,6 @@ import Navbar from "./components/NavBar";
 function App() {
 
     return (
-
         <div>
             <Navbar/>
             <Routes>
@@ -17,7 +16,6 @@ function App() {
             </Routes>
 
         </div>
-
     );
 }
 

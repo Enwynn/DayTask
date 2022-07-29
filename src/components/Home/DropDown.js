@@ -1,7 +1,8 @@
 import {useState} from "react";
 
-const getDropdown = (props) => {
+const getDropdown = (props, propCategory) => {
     let onChange = (prop) => {
+        propCategory(prop)
         props(prop)
     }
     return <div className="bg-red-300 flex flex-col rounded mt-1 p-2 text-sm w-32" id="dropdown">
@@ -17,14 +18,13 @@ function DropDown  ({setCategory}) {
 
     let onChange = () => {
         setShowResults(!showResults)
-        setCategory("Hello")
     }
 
    return (
        <div>
            <button type = "button" onClick={() => onChange()}
                    className="bg-red-400 px-4 py-2 rounded" id="menu-btn">{menuSelection}</button>
-           {showResults ? getDropdown(setMenuSelection) : null}
+           {showResults ? getDropdown(setMenuSelection, setCategory) : null}
 
        </div>
    )
